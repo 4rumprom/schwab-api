@@ -73,6 +73,7 @@ class SessionManager:
         await stealth_async(self.page)
         
         await self.page.goto("https://www.schwab.com/")
+        await asyncio.sleep(5)
 
         await self.page.route(re.compile(r".*balancespositions*"), self._asyncCaptureAuthToken)
 
